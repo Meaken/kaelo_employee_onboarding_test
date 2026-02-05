@@ -1,4 +1,46 @@
 <odoo>
+  <record id="view_employee_onboarding_tree" model="ir.ui.view">
+    <field name="name">employee.onboarding.tree</field>
+    <field name="model">employee.onboarding</field>
+    <field name="arch" type="xml">
+      <tree string="Employee Onboarding">
+        <field name="full_name"/>
+        <field name="employee_number"/>
+        <field name="id_number"/>
+        <field name="date_of_birth"/>
+        <field name="email"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_employee_onboarding_form" model="ir.ui.view">
+    <field name="name">employee.onboarding.form</field>
+    <field name="model">employee.onboarding</field>
+    <field name="arch" type="xml">
+      <form string="Employee Onboarding">
+        <sheet>
+          <group>
+            <group>
+              <field name="full_name"/>
+              <field name="employee_number"/>
+              <field name="id_number"/>
+            </group>
+            <group>
+              <field name="date_of_birth"/>
+              <field name="email"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_employee_onboarding" model="ir.actions.act_window">
+    <field name="name">Employee Onboarding</field>
+    <field name="res_model">employee.onboarding</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
   <record id="view_staff_import_wizard" model="ir.ui.view">
     <field name="name">employee.onboarding.import.wizard</field>
     <field name="model">employee.onboarding.import</field>
@@ -15,6 +57,8 @@
     </field>
   </record>
   <menuitem id="kaelo_onboarding_menu" name="Kaelo Onboarding" sequence="10"/>
+  <menuitem id="kaelo_employee_onboarding_menu" name="Employees"
+            parent="kaelo_onboarding_menu" action="action_employee_onboarding" sequence="5"/>
   <record id="action_staff_import" model="ir.actions.act_window">
     <field name="name">Import Staff</field>
     <field name="res_model">employee.onboarding.import</field>

@@ -54,6 +54,17 @@ docker-compose up -d
 # Take a screenshot of your employees list and add it to the main directory when opening your PR
 ```
 
+## How to run this solution
+
+1. Ensure Docker is running, then from the project root run: `docker compose up -d`
+2. Open http://localhost:8069, create the database (e.g., `test`).
+3. Log in with:
+   - Email: meakengumbi11@gmail.com
+   - Password: admin
+4. In Apps, enable Developer Mode if needed, update the apps list, and install “Kaelo Employee Onboarding”.
+5. Go to Kaelo Onboarding > Import Staff, upload `sample_data/staff_list.csv`, and click Import.
+6. Review imported records at Kaelo Onboarding > Employees and capture the screenshot for the PR.
+
 ## Sample CSV (`sample_data/staff_list.csv`)
 
 ```csv
